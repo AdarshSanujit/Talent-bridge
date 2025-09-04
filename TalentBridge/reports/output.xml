@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.5 on win32)" generated="2025-09-04T22:23:15.407275" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\ADRASH\OneDrive\Desktop\TalentBridge\tests">
+<suite id="s1-s1" name="Auth" source="C:\Users\ADRASH\OneDrive\Desktop\TalentBridge\tests\auth">
+<suite id="s1-s1-s1" name="Login" source="C:\Users\ADRASH\OneDrive\Desktop\TalentBridge\tests\auth\login.robot">
+<kw name="Open Browser To Login Page" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:16.727897" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/auth/login'.</msg>
+<arg>${BASE_URL}/auth/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-04T22:23:16.727897" elapsed="13.978562"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-04T22:23:30.706970" elapsed="0.500464"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login to TalentBridge</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:31.207434" elapsed="0.039978"/>
+</kw>
+<doc>Opens the browser at the TalentBridge login page.</doc>
+<status status="PASS" start="2025-09-04T22:23:16.726920" elapsed="14.521482"/>
+</kw>
+<test id="s1-s1-s1-t1" name="HR Can Log In" line="8">
+<kw name="Login As HR" owner="Common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:31.253764" level="INFO">Typing text 'admin@talentbridge.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>admin@talentbridge.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:31.251698" elapsed="0.536215"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:31.787913" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-09-04T22:23:31.882610" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=password</arg>
+<arg>admin123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:31.787913" elapsed="0.223664"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:32.013088" level="INFO">Clicking button 'xpath=//button[normalize-space()="Login"]'.</msg>
+<arg>xpath=//button[normalize-space()="Login"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:32.012572" elapsed="1.577138"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>HR Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:33.590219" elapsed="0.070685"/>
+</kw>
+<doc>Logs in using the seeded admin HR account.</doc>
+<status status="PASS" start="2025-09-04T22:23:31.250681" elapsed="2.411233"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:33.699496" level="INFO">Page title is 'HR Dashboard - TalentBridge'.</msg>
+<arg>HR Dashboard - TalentBridge</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-09-04T22:23:33.665082" elapsed="0.034414"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:33.791494" level="INFO">Current page contains text 'Manage jobs'.</msg>
+<arg>Manage jobs</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-04T22:23:33.700514" elapsed="0.091979"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2025-09-04T22:23:31.248402" elapsed="2.547647"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-09-04T22:23:33.800960" elapsed="3.189733"/>
+</kw>
+<status status="PASS" start="2025-09-04T22:23:15.597780" elapsed="21.392913"/>
+</suite>
+<status status="PASS" start="2025-09-04T22:23:15.592494" elapsed="21.400724"/>
+</suite>
+<suite id="s1-s2" name="Jobs" source="C:\Users\ADRASH\OneDrive\Desktop\TalentBridge\tests\jobs">
+<suite id="s1-s2-s1" name="Post Job" source="C:\Users\ADRASH\OneDrive\Desktop\TalentBridge\tests\jobs\post_job.robot">
+<kw name="Open Browser To Login Page" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:37.006396" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/auth/login'.</msg>
+<arg>${BASE_URL}/auth/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-04T22:23:37.006396" elapsed="4.139803"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-04T22:23:41.146199" elapsed="0.074109"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login to TalentBridge</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:41.220308" elapsed="0.049291"/>
+</kw>
+<doc>Opens the browser at the TalentBridge login page.</doc>
+<status status="PASS" start="2025-09-04T22:23:37.004881" elapsed="4.265739"/>
+</kw>
+<test id="s1-s2-s1-t1" name="HR Can Post A Job" line="8">
+<kw name="Login As HR" owner="Common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:41.274140" level="INFO">Typing text 'admin@talentbridge.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>admin@talentbridge.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:41.273126" elapsed="0.831422"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:42.105546" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-09-04T22:23:42.199955" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=password</arg>
+<arg>admin123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:42.105546" elapsed="0.237001"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:42.343654" level="INFO">Clicking button 'xpath=//button[normalize-space()="Login"]'.</msg>
+<arg>xpath=//button[normalize-space()="Login"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:42.343654" elapsed="1.321766"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>HR Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:43.665420" elapsed="0.033663"/>
+</kw>
+<doc>Logs in using the seeded admin HR account.</doc>
+<status status="PASS" start="2025-09-04T22:23:41.272619" elapsed="2.426464"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:43.701102" level="INFO">Opening url 'http://localhost:5000/jobs/post'</msg>
+<arg>${BASE_URL}/jobs/post</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-04T22:23:43.701102" elapsed="0.444708"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=title</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:44.146804" elapsed="0.033600"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:44.182411" level="INFO">Typing text 'QA Engineer (Robot)' into text field 'id=title'.</msg>
+<arg>id=title</arg>
+<arg>QA Engineer (Robot)</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:44.181413" elapsed="0.294087"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:44.477536" level="INFO">Selecting options from selection list 'id=job_type' by label Full-time.</msg>
+<arg>id=job_type</arg>
+<arg>Full-time</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-09-04T22:23:44.477027" elapsed="0.204520"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:44.683796" level="INFO">Selecting options from selection list 'id=department' by label Information Technology.</msg>
+<arg>id=department</arg>
+<arg>Information Technology</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-09-04T22:23:44.682561" elapsed="0.284514"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:44.969814" level="INFO">Selecting options from selection list 'id=location' by label Remote.</msg>
+<arg>id=location</arg>
+<arg>Remote</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-09-04T22:23:44.968798" elapsed="0.280540"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:45.251365" level="INFO">Typing text '8-10 LPA' into text field 'id=salary_range'.</msg>
+<arg>id=salary_range</arg>
+<arg>8-10 LPA</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:45.250347" elapsed="0.452543"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:45.704979" level="INFO">Typing text '2030-12-31' into text field 'id=deadline'.</msg>
+<arg>id=deadline</arg>
+<arg>2030-12-31</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:45.704457" elapsed="0.317892"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:46.027167" level="INFO">Typing text 'Test and improve product quality using automation and manual testing.' into text field 'id=description'.</msg>
+<arg>id=description</arg>
+<arg>Test and improve product quality using automation and manual testing.</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:46.024469" elapsed="0.544089"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:46.570581" level="INFO">Typing text '2+ years experience; Python; Robot Framework; Selenium.' into text field 'id=requirements'.</msg>
+<arg>id=requirements</arg>
+<arg>2+ years experience; Python; Robot Framework; Selenium.</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:46.569569" elapsed="0.447925"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:47.019509" level="INFO">Typing text 'Python, Robot Framework, Selenium, SQL' into text field 'id=skills_required'.</msg>
+<arg>id=skills_required</arg>
+<arg>Python, Robot Framework, Selenium, SQL</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:47.018509" elapsed="0.494492"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//button[normalize-space()="Post Job"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-09-04T22:23:47.514553" elapsed="0.352266"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:47.867840" level="INFO">Clicking button 'xpath=//button[normalize-space()="Post Job"]'.</msg>
+<arg>xpath=//button[normalize-space()="Post Job"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-04T22:23:47.867840" elapsed="0.171836"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Job posted successfully!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:48.047469" elapsed="0.801012"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-04T22:23:48.849486" level="INFO">Opening url 'http://localhost:5000/jobs/list'</msg>
+<arg>${BASE_URL}/jobs/list</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-04T22:23:48.849486" elapsed="0.614662"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>QA Engineer (Robot)</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-04T22:23:49.465146" elapsed="0.024154"/>
+</kw>
+<tag>jobs</tag>
+<status status="PASS" start="2025-09-04T22:23:41.270620" elapsed="8.220698"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-09-04T22:23:49.493404" elapsed="2.437076"/>
+</kw>
+<status status="PASS" start="2025-09-04T22:23:37.000362" elapsed="14.930118"/>
+</suite>
+<status status="PASS" start="2025-09-04T22:23:36.995231" elapsed="14.937158"/>
+</suite>
+<status status="PASS" start="2025-09-04T22:23:15.413481" elapsed="36.519917"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">jobs</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="0" skip="0">Tests</stat>
+<stat name="Auth" id="s1-s1" pass="1" fail="0" skip="0">Tests.Auth</stat>
+<stat name="Login" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Auth.Login</stat>
+<stat name="Jobs" id="s1-s2" pass="1" fail="0" skip="0">Tests.Jobs</stat>
+<stat name="Post Job" id="s1-s2-s1" pass="1" fail="0" skip="0">Tests.Jobs.Post Job</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
